@@ -3,24 +3,24 @@ session_start();
 include 'includes/db.inc.php'; 
 include 'includes/zadnjaDonacija.inc.php';
 
-if (!isset($_SESSION['jmbg'])) {
-    echo "<p style='color:red; text-align:center; margin-top:20px;'>Niste prijavljeni. Molimo da se prijavite kako biste pristupili ovoj stranici.</p>";
+if (!isset($_SESSION['admin_id'])) {
+    echo "<p style='color:red; text-align:center; margin-top:20px;'>Niste prijavljeni kao admin. Molimo da se prijavite kako biste pristupili ovoj stranici.</p>";
     exit;
 }
 
-$jmbg = $_SESSION['jmbg'];
-$ime = $_SESSION['ime'] ?? 'Korisniče';
+$admin_id = $_SESSION['admin_id'];
+$ime = $_SESSION['admin_ime'] ?? 'Admin';
+
+$admin_id = $_SESSION['admin_id'];
+$ime = $_SESSION['admin_ime'] ?? 'Admin';
 
 // Ucitavanje prijava korisnika
-$stmt = $pdo->prepare("SELECT * FROM prijave WHERE jmbg = ? ORDER BY datum_prijave DESC");
-$stmt->execute([$jmbg]);
-$prijave = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 
 // Ucitavanje nadolazecih termina donacija
 try {
     $stmt = $pdo->query("SELECT datum_donacije, vrijeme_donacije 
                          FROM donacije 
-                         WHERE datum_donacije >= CURDATE()
                          ORDER BY datum_donacije ASC, vrijeme_donacije ASC");
     $donacije = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
