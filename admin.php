@@ -191,7 +191,7 @@ $admini = $pdo->query("SELECT * FROM administratori");
   <section>
       <div class="section-header">
         <h2>Prijavljeni admini</h2>
-        <a href="admin/novi_admin.php" class="btn btn-success btn-sm">+ Dodaj</a>
+        <a href="novi_admin.php" class="btn btn-success btn-sm">+ Dodaj</a>
       </div>
       <table>
           <tr>
@@ -209,7 +209,8 @@ $admini = $pdo->query("SELECT * FROM administratori");
   </section>
 
 </div>
-<div class="modal fade" id="adminModal" tabindex="-1" aria-labelledby="adminModalLabel" aria-hidden="true">
+         
+      <div class="modal fade" id="adminModal" tabindex="-1" aria-labelledby="adminModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -217,7 +218,7 @@ $admini = $pdo->query("SELECT * FROM administratori");
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form action="admin/dodajdonacijuAdmin.php" method="POST">
+              <form action="../includes/dodaj_donaciju.php" method="POST">
                 <div class="mb-3">
                   <label for="adminIme" class="form-label">Korisničko ime</label>
                   <input type="text" class="form-control" id="adminIme" name="adminIme" required>
@@ -234,7 +235,7 @@ $admini = $pdo->query("SELECT * FROM administratori");
                   <label for="vrijemeDonacije" class="form-label">Vrijeme donacije</label>
                   <input type="time" class="form-scontrol" id="vrijemeDonacije" name="vrijemeDonacije" required>
                 </div>
-                <button type="submit" class="btn btn-primary" action="admin/dodajdonacijuAdmin.php">Dodaj donaciju</button>
+                <button type="submit" class="btn btn-primary">Dodaj donaciju</button>
                 <div class="text-center mt-3">
                   <a href="novi_admin.php" class="btn btn-sm btn-outline-secondary">Novi admin? Prijavite se.</a>
                 </div>
@@ -243,6 +244,7 @@ $admini = $pdo->query("SELECT * FROM administratori");
           </div>
         </div>
       </div>
+
 <script>
     window.onscroll = function() {
         const navbar = document.querySelector('.navbar');
