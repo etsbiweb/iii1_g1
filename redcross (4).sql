@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2025 at 08:58 PM
+-- Generation Time: May 29, 2025 at 09:19 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -42,7 +42,9 @@ INSERT INTO `administratori` (`id`, `korisnicko_ime`, `lozinka`) VALUES
 (17, 'asija', '$2y$10$B0/pDrj7stsYgFv304q7COYjK1IcmOsCs6LRWgwJMwGQtIUpK3mla'),
 (18, 'amra', '$2y$10$JBGoa3JxzWN49LsmMnuKD.eZwBP2oo8pLjWcLT2n9F5rsYzxyLsaa'),
 (19, 'sajra', '$2y$10$UV7cQ.brIAzPxn16lwqbt.dBdIfQQbFayFTSQhX8/GBok6InzRRi2'),
-(20, 'edna', '$2y$10$0wDxV9dX/BqHhfadve4DdOyht2rSb3TcI4qb8B0zO3gvJA.TxucnG');
+(20, 'edna', '$2y$10$0wDxV9dX/BqHhfadve4DdOyht2rSb3TcI4qb8B0zO3gvJA.TxucnG'),
+(22, 'mensur', '$2y$10$Lbqs27CpVdTP1U385LHeduVYuJVGSCQEjtKM5ttXvg066nv0OJzTO'),
+(23, 'admir', '$2y$10$XWtOoImm3eb8psLD0MaiTeop3KP3/mZhRNWSGSDZgw2M.vV7hDXnW');
 
 -- --------------------------------------------------------
 
@@ -62,7 +64,8 @@ CREATE TABLE `donacije` (
 --
 
 INSERT INTO `donacije` (`id`, `datum_donacije`, `vrijeme_donacije`, `admin_id`) VALUES
-(21, '2025-06-12', '13:00:00', 18);
+(21, '2025-06-12', '13:00:00', 18),
+(23, '2025-11-11', '08:00:00', 16);
 
 -- --------------------------------------------------------
 
@@ -164,13 +167,13 @@ ALTER TABLE `volonter`
 -- AUTO_INCREMENT for table `administratori`
 --
 ALTER TABLE `administratori`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `donacije`
 --
 ALTER TABLE `donacije`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `prijave`
@@ -182,7 +185,7 @@ ALTER TABLE `prijave`
 -- AUTO_INCREMENT for table `privremeni_admini`
 --
 ALTER TABLE `privremeni_admini`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `volonter`
